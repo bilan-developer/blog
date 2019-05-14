@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/', function (){
+        return redirect('/admin/category');
+    });
+    require_once 'backend/category.php';
+    require_once 'backend/news.php';
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
