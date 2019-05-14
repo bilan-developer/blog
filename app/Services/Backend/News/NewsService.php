@@ -6,9 +6,9 @@
  * Time: 0:08
  */
 
-namespace App\Services\Backend\Category;
+namespace App\Services\Backend\News;
 
-use App\Models\Category;
+use App\Models\News;
 use Nayjest\Grids\Components\Base\RenderableRegistry;
 use Nayjest\Grids\Components\ColumnHeadersRow;
 use Nayjest\Grids\Components\FiltersRow;
@@ -23,7 +23,7 @@ use Nayjest\Grids\FieldConfig;
 use Nayjest\Grids\Grid;
 use Nayjest\Grids\GridConfig;
 
-class CategoryService
+class NewsService
 {
     /**
      * Таблица категорий.
@@ -50,11 +50,28 @@ class CategoryService
                         })
                     ,
                     (new FieldConfig)
-                        ->setName('name')
-                        ->setLabel('Название')
+                        ->setName('title')
+                        ->setLabel('Заголовок')
                         ->setSortable(true)
                         ->setCallback(function ($val, $row) {
                             return $val;
+                        })
+                    ,
+                    (new FieldConfig)
+                        ->setName('author')
+                        ->setLabel('Автор')
+                        ->setSortable(true)
+                        ->setCallback(function ($val, $row) {
+                            return $val;
+                        })
+                    ,
+                    (new FieldConfig)
+                        ->setName('date')
+                        ->setLabel('Дата')
+                        ->setSortable(true)
+                        ->setCallback(function ($val, $row) {
+                            $date = new \DateTime($val);
+                            return $date->format('d-m-Y');
                         })
                     ,
                     (new FieldConfig)
@@ -95,7 +112,7 @@ class CategoryService
      */
     public function search()
     {
-        return (new Category())
+        return (new News())
             ->newQuery();
     }
 

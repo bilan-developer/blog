@@ -26,14 +26,14 @@ class CategoryRequest extends FormRequest
     {
         if($this->getMethod() === 'PUT'){
             return [
-                'name' => 'required|string|min:3',
-                'description' => 'required|string:max:2000',
+                'name' => 'required|string|max:1000',
+                'description' => 'required|string|max:2000',
                 'image' => 'bail|image|max:' . Constants::MAX_FILE_SIZE_IMAGE,
             ];
         }
         return [
-            'name' => 'required|string|min:3',
-            'description' => 'required|string:max:2000',
+            'name' => 'required|string|max:1000',
+            'description' => 'required|string|max:2000',
             'image' => 'required|bail|image|max:' . Constants::MAX_FILE_SIZE_IMAGE,
         ];
     }

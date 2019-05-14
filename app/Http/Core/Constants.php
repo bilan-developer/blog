@@ -23,6 +23,11 @@ class Constants
     /** Максимально допустимый размер изображения*/
     const MAX_FILE_SIZE_IMAGE = 1024; // 1
 
+    const STATUSES_NEWS = [
+        'publish' => 'Опубликовано',
+        'hidden' => 'Скрыто'
+    ];
+
 
 
 

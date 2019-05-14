@@ -58,17 +58,6 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Страница редактирования категории.
      *
      * @param Category $category
@@ -76,8 +65,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('backend.category.edit', compact('category'));
+        $category->load('image');
 
+        return view('backend.category.edit', compact('category'));
     }
 
     /**

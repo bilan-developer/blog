@@ -12,6 +12,7 @@ class Category extends Model
         'name', 'description', 'image_id',
     ];
 
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

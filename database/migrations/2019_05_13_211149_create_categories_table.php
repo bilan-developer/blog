@@ -18,7 +18,6 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('description', 2000);
             $table->bigInteger('image_id');
-            $table->timestamps();
 
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
 
@@ -32,8 +31,7 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('categories', function(Blueprint $table)
-        {
+        Schema::table('categories', function(Blueprint $table) {
             $table->dropForeign('categories_image_id_foreign');
         });
 

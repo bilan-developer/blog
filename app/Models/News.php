@@ -7,8 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     protected $fillable = [
-        'name', 'email', 'password',
+        'title',
+        'description',
+        'text',
+        'image_id',
+        'date',
+        'author',
+        'category_id',
+        'status',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
+    }
 
     /**
      * @return string

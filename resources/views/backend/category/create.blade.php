@@ -18,13 +18,13 @@
                 <div class='form-group'>
                     <label for="body" class="col-sm-3 control-label label-left">Название</label>
                     <div class="col-sm-6">
-                        {!!  Form::text('name', null, ['class' => 'form-control'])!!}
+                        {!!  Form::text('name', null, ['class' => 'form-control', 'required'])!!}
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for="body" class="col-sm-3 control-label label-left">Описание</label>
                     <div class="col-sm-6">
-                        {!!  Form::textarea('description', null, ['class' => 'form-control'])!!}
+                        {!!  Form::textarea('description', null, ['class' => 'form-control', 'required'])!!}
                     </div>
                 </div>
                 <div class='form-group'>

@@ -10,10 +10,10 @@
 @section('content')
     <div class="box box-success">
         <div class="box-header with-border">
-{{--            <a href="{!! route('admin.apartments.create') !!}" class="btn btn-success pull-right">Создать объект</a>--}}
+            <a href="{!! route('admin.news.create') !!}" class="btn btn-success pull-right">Создать новость</a>
         </div>
         <div class="box-body">
-            {{--{!! $grid !!}--}}
+            {!! $grid !!}
         </div>
     </div>
 @stop
