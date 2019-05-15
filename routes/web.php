@@ -23,7 +23,16 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'au
     require_once 'backend/news.php';
 });
 
+Route::group(['namespace' => 'Frontend'], function () {
+    Route::get('/', function (){
+        return redirect('/category');
+    });
+    Route::get('/home', function (){
+        return redirect('/category');
+    });
+    require_once 'frontend/category.php';
+    require_once 'frontend/news.php';
+});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

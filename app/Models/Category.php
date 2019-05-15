@@ -23,6 +23,14 @@ class Category extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function news()
+    {
+        return $this->hasMany(News::class);
+    }
+
+    /**
      * @return string
      */
     public function getEditButtonAttribute()
